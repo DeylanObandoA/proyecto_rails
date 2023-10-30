@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+<nav class="navbar fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/skills">skills</a>
+    <a class="navbar-brand" href="/projects">projects</a>
+    <a class="navbar-brand" href="/about"> about</a>
+    <a class="navbar-brand" href="/contacts/new"> contact</a>
+    <% if current_user %>
+  <% current_user.role %>
+  <%= link_to "logout",destroy_user_session_path, method: :delete, data: { turbo_method: :delete}  %>
+  <% else %>
+  <%= link_to "Login",new_user_session_path %>
+  <% end %>
+  </div>
+  </nav>
+    <%= yield %>
+  </body>
+</html>
+

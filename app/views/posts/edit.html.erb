@@ -1,0 +1,10 @@
+<h1>Editing user</h1>
+
+<%= render "form", post: @user %>
+
+<br>
+
+<div>
+  <%= link_to "Show this post", edit_admin_user_path(@user) %> |
+  <%= link_to "Back to posts", admin_user_path %>
+</div>

@@ -1,0 +1,34 @@
+<%= form_with model: [:admiin,  admin_users_path] do |form| %>
+    <% if skill.errors.any? %>
+        <div style = "color: red">
+        <h2><%= pluralize(skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+        <ul>
+        <% skill.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+<br />
+    <p>
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </p>
+
+
+    <p>
+        <%= form.label :description%>
+        <%= form.text_field :description%>
+    </p>
+
+
+    <p>
+        <%= form.label :email %><br />
+        <%= form.email_field :email, autocomplete: "email" %>
+    </p>
+
+    <div>
+        <%= form.submit "Save" %>
+    </div> 
+
+<% end %>

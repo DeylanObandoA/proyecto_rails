@@ -1,0 +1,16 @@
+
+<h1>INFO</h1>
+<ul>
+    <% @users.each do |user| %>
+        <p>
+            <p><strong>Name:</strong> <%= user.name %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Description:</strong> <%= user.description %></p>
+
+            <%= link_to "Edit", edit_admin_about_path(user) %>
+
+        
+        </p>
+</ul>
+
+    <% end %>

@@ -1,0 +1,28 @@
+<br>
+<br>
+<html>
+
+  <body>
+  <p style="color: green"><%= notice %></p>
+
+  <h1>About me </h1>
+    <h1>home#index</h1>
+  <h1></h1>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <%# <%= render "form", users: @user %>
+    
+    <%= yield %>
+
+  <% if current_user %>
+  <% current_user.role %>
+  <%= link_to "logout",destroy_user_session_path, method: :delete, data: { turbo_method: :delete}  %>
+  <% else %>
+  <%= link_to "Login",new_user_session_path %>
+  <% end %>
+    <body>
+
+<html>

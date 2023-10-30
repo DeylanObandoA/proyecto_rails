@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Type technologies</h1>
+
+<div id="type_technologies">
+  <% @type_technologies.each do |type_technology| %>
+    <%= render type_technology %>
+    <p>
+      <%= link_to "Show this type technology", type_technology %>
+    </p>
+  <% end %>
+</div>
+
+ <%# link_to "New type technology", new_type_technology_path  %>
